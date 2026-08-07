@@ -490,3 +490,60 @@ h4 {
   scroll-margin-top: var(--nav-height);
   border-top: 1px solid var(--color-line);
 }
+
+/* ---------- Loading screen ---------- */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.loading-logo {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.loading-bar-track {
+  width: 220px;
+  height: 2px;
+  background-color: var(--color-line);
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-text);
+  animation: loading-fill 1.4s var(--ease) forwards;
+}
+
+@keyframes loading-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loader-fade-leave-active {
+  transition: opacity 0.6s var(--ease);
+}
+
+.loader-fade-leave-to {
+  opacity: 0;
+}

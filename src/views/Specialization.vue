@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import Knits from '../components/specialization/Knits.vue'
+import Sweater from '../components/specialization/Sweater.vue'
+import Denim from '../components/specialization/Denim.vue'
+</script>
 
 <template>
   <main class="page">
@@ -7,26 +11,17 @@
       <h1 class="section-title">What We Manufacture</h1>
       <p class="section-text">
         Rainbow Doll runs dedicated factories for each garment category, so every piece is made by a
-        team that specializes in it.
+        team that specializes in it. Jump to a category below.
       </p>
-      <div class="card-grid intro-why-grid">
-        <RouterLink to="/specialization/knits" class="card">
-          <h3 class="card-title">Knits</h3>
-          <p class="section-text">
-            Precision knitwear production, from fine gauge to chunky knits.
-          </p>
-        </RouterLink>
-        <RouterLink to="/specialization/sweater" class="card">
-          <h3 class="card-title">Sweater</h3>
-          <p class="section-text">Quality sweater manufacturing built on decades of craft.</p>
-        </RouterLink>
-        <RouterLink to="/specialization/denim" class="card">
-          <h3 class="card-title">Denim</h3>
-          <p class="section-text">
-            Full-service denim production, from raw fabric to finished wash.
-          </p>
-        </RouterLink>
-      </div>
+      <nav class="spec-jumpnav">
+        <a href="#knits" class="spec-jump-btn">Knits</a>
+        <a href="#sweater" class="spec-jump-btn">Sweater</a>
+        <a href="#denim" class="spec-jump-btn">Denim</a>
+      </nav>
     </section>
+
+    <Knits />
+    <Sweater />
+    <Denim />
   </main>
 </template>

@@ -277,6 +277,13 @@ h4 {
   opacity: 0.6;
 }
 
+.menu-caret-btn {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .menu-caret.open {
   transform: rotate(180deg);
 }

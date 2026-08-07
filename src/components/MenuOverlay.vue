@@ -21,9 +21,17 @@ function closeAll() {
         <RouterLink to="/" class="menu-link" @click="closeAll">Introduction</RouterLink>
 
         <div>
-          <div class="menu-item-row menu-link" @click="specOpen = !specOpen">
-            <span>Specialization</span>
-            <span class="menu-caret" :class="{ open: specOpen }">&darr;</span>
+          <div class="menu-item-row">
+            <RouterLink to="/specialization" class="menu-link" @click="closeAll"
+              >Specialization</RouterLink
+            >
+            <button
+              class="menu-caret-btn"
+              :aria-label="specOpen ? 'Collapse specialization list' : 'Expand specialization list'"
+              @click="specOpen = !specOpen"
+            >
+              <span class="menu-caret" :class="{ open: specOpen }">&darr;</span>
+            </button>
           </div>
           <div v-if="specOpen" class="menu-sub">
             <a href="/specialization#knits" class="menu-sub-link" @click="closeAll">Knits</a>

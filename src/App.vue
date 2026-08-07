@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import Navbar from './components/Navbar.vue'
+import MenuOverlay from './components/MenuOverlay.vue'
+
+const menuOpen = ref(false)
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+  <Navbar :menu-open="menuOpen" @toggle-menu="menuOpen = true" />
+  <MenuOverlay :open="menuOpen" @close="menuOpen = false" />
 
-<style scoped></style>
+  <RouterView v-slot="{ Component }">
+    <Transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </Transition>
+  </RouterView>
+</template>

@@ -1,0 +1,430 @@
+/* ============================================
+   RAINBOW DOLL — GLOBAL STYLESHEET
+   Single source of truth for all styling.
+   No <style> blocks should exist in any .vue file.
+   ============================================ */
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* ---------- Design tokens ---------- */
+  :root {
+    --color-bg: #D3C8AB;
+    --color-bg-alt: #c7bb9a;
+    --color-text: #262220;
+    --color-text-soft: #514a44;
+    --color-accent: #ffffff;
+    --color-line: rgba(38, 34, 32, 0.2);
+  
+    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+    --nav-height: 84px;
+    --gutter: 3rem;
+    --gutter-mobile: 1.5rem;
+  
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  button {
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  
+  /* ---------- Layout helpers ---------- */
+  .page {
+    padding-top: var(--nav-height);
+    min-height: 100vh;
+  }
+  
+  .section {
+    padding: 6rem var(--gutter);
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 3.5rem var(--gutter-mobile);
+    }
+  }
+  
+  .section-narrow {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-line);
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1.25rem;
+  }
+  
+  .section-text {
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    max-width: 60ch;
+  }
+  
+  /* ---------- Navbar ---------- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--gutter);
+    z-index: 100;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-line);
+    transition: background-color 0.3s var(--ease);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0 var(--gutter-mobile);
+    }
+  }
+  
+  .navbar-logo {
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .navbar-logo span {
+    font-weight: 300;
+    opacity: 0.7;
+  }
+  
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+    width: 32px;
+    height: 20px;
+  }
+  
+  .menu-btn-bar {
+    display: block;
+    height: 1.5px;
+    background-color: var(--color-text);
+    transition: width 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+  
+  .menu-btn-bar.top {
+    width: 28px;
+  }
+  
+  .menu-btn-bar.bottom {
+    width: 20px;
+  }
+  
+  .menu-btn:hover .menu-btn-bar {
+    width: 28px;
+  }
+  
+  /* ---------- Menu Overlay ---------- */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-bg);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--gutter);
+  }
+  
+  .menu-overlay-top {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-line);
+  }
+  
+  .menu-close-btn {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 300;
+  }
+  
+  .menu-overlay-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 2rem 0 4rem;
+  }
+  
+  .menu-link {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    display: inline-block;
+    width: fit-content;
+    transition: opacity 0.2s var(--ease), padding-left 0.25s var(--ease);
+  }
+  
+  .menu-link:hover {
+    opacity: 0.55;
+    padding-left: 0.5rem;
+  }
+  
+  .menu-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.5rem 0 0.5rem 1.5rem;
+  }
+  
+  .menu-sub-link {
+    font-size: 1.1rem;
+    color: var(--color-text-soft);
+    transition: opacity 0.2s var(--ease), padding-left 0.25s var(--ease);
+  }
+  
+  .menu-sub-link:hover {
+    opacity: 0.6;
+    padding-left: 0.4rem;
+  }
+  
+  .menu-item-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .menu-caret {
+    font-size: 1rem;
+    transition: transform 0.25s var(--ease);
+    opacity: 0.6;
+  }
+  
+  .menu-caret.open {
+    transform: rotate(180deg);
+  }
+  
+  /* ---------- Footer ---------- */
+  .footer {
+    padding: 2.5rem var(--gutter);
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+  }
+  
+  /* ---------- Page transition (smooth loading) ---------- */
+  .fade-enter-active {
+    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  }
+  .fade-leave-active {
+    transition: opacity 0.2s var(--ease);
+  }
+  .fade-enter-from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .fade-leave-to {
+    opacity: 0;
+  }
+  
+  /* ---------- Menu overlay transition ---------- */
+  .menu-fade-enter-active,
+  .menu-fade-leave-active {
+    transition: opacity 0.3s var(--ease);
+  }
+  .menu-fade-enter-from,
+  .menu-fade-leave-to {
+    opacity: 0;
+  }
+  
+  /* ---------- Placeholder image blocks (until real photography is added) ---------- */
+  .photo-placeholder {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-soft);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    min-height: 320px;
+  }
+  
+  /* ---------- Generic grid ---------- */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (max-width: 900px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    border: 1px solid var(--color-line);
+    padding: 2rem;
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-text);
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* ---------- Introduction page ---------- */
+  .intro-hero {
+    padding-top: 4rem;
+  }
+  
+  .intro-hero-photo {
+    margin-top: 2.5rem;
+    min-height: 420px;
+  }
+  
+  .intro-why-grid {
+    margin-top: 2.5rem;
+  }
+  
+  .intro-cta {
+    text-align: center;
+    border-top: 1px solid var(--color-line);
+  }
+  
+  .intro-cta .section-text {
+    margin: 0 auto 1.5rem;
+  }
+  
+  /* ---------- Form (Quote page) ---------- */
+  .form-grid {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 560px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .form-field label {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text-soft);
+  }
+  
+  .form-field input,
+  .form-field textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.25s var(--ease);
+  }
+  
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--color-text);
+  }
+  
+  .submit-btn {
+    justify-self: start;
+    margin-top: 0.5rem;
+    padding: 0.9rem 2.2rem;
+    border: 1px solid var(--color-text);
+    border-radius: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+  }
+  
+  .submit-btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }

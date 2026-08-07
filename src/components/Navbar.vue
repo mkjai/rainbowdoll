@@ -1,4 +1,6 @@
 <script setup>
+import logo from '../assets/logo.png'
+
 defineProps({
   menuOpen: Boolean,
 })
@@ -7,7 +9,9 @@ defineEmits(['toggle-menu'])
 
 <template>
   <header class="navbar">
-    <RouterLink to="/" class="navbar-logo" aria-label="Rainbow Doll home">LOGO</RouterLink>
+    <RouterLink to="/" class="navbar-logo" aria-label="Rainbow Doll home">
+      <img :src="logo" alt="Rainbow Doll logo" class="navbar-logo-img" />
+    </RouterLink>
     <button
       class="menu-btn"
       :class="{ open: menuOpen }"

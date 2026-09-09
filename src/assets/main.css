@@ -498,6 +498,28 @@ h4 {
   border-top: 1px solid var(--color-line);
 }
 
+.spec-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 60ch;
+}
+
+.spec-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-text-soft);
+  font-size: 1rem;
+}
+
+.spec-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-text);
+}
+
 /* ---------- Loading screen ---------- */
 .loading-screen {
   position: fixed;

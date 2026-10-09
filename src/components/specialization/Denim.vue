@@ -19,6 +19,19 @@
       <li>Full-package denim manufacturing from fabric to finished garment</li>
       <li>Low-impact and sustainable denim options</li>
     </ul>
-    <div class="photo-placeholder intro-hero-photo">Photo: denim production</div>
+    <div class="photo-masonry">
+      <img
+        src="https://images.unsplash.com/photo-1624378440847-4a64ee1a889d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+        alt="Blue denim jeans fabric"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1578939662863-5cd416d45a69?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+        alt="Multiple pairs of denim jeans on hangers"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1645859724073-d9bff094b1c7?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+        alt="Close-up of woven blue denim fabric"
+      />
+    </div>
   </section>
 </template>

@@ -11,19 +11,30 @@
         knits, sweaters, and denim — backed by sourcing offices in the US and Asia, and a team with
         over 20 years of production experience.
       </p>
-      <div class="photo-placeholder intro-hero-photo">
-        Photo: fabric / knitwear close-up
-        <!-- Suggested Unsplash search: "knitwear texture" or "fabric rolls" -->
+      <div class="photo-masonry">
+        <img
+          src="https://images.unsplash.com/photo-1602706294170-1fed8eecd9f9?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+          alt="Close-up of knit textile fabric"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1459792323369-14e51bb68de0?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+          alt="Assorted colorful thread spools"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1670764732222-e787bccd934f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+          alt="Macro close-up of cream wool yarn"
+        />
       </div>
     </section>
 
     <!-- About Us -->
     <section class="section">
       <div class="two-col">
-        <div class="photo-placeholder">
-          Photo: sourcing office / team at work
-          <!-- Suggested Unsplash search: "office team textile design" -->
-        </div>
+        <img
+          class="section-photo"
+          src="https://images.unsplash.com/photo-1753162658596-2ccba5e4246a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="Sourcing and design team collaborating in a studio"
+        />
         <div>
           <div class="eyebrow">About Us</div>
           <h2 class="section-title">A vertically integrated sourcing partner</h2>
@@ -96,10 +107,11 @@
             clients.
           </p>
         </div>
-        <div class="photo-placeholder">
-          Photo: factory floor / production line
-          <!-- Suggested Unsplash search: "garment factory sewing" -->
-        </div>
+        <img
+          class="section-photo"
+          src="https://images.unsplash.com/photo-1742280923627-d7558b7bb1d5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+          alt="Garment factory workers on the production line"
+        />
       </div>
     </section>
 

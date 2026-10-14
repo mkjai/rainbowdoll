@@ -21,14 +21,17 @@
     </ul>
     <div class="photo-masonry">
       <img
+        class="tile-large"
         src="https://images.unsplash.com/photo-1706864685919-abccadda8d0e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
         alt="Close-up of knitted fabric with craft scissors"
       />
       <img
+        class="tile-a"
         src="https://images.unsplash.com/photo-1597736091383-084fa1b69a6a?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
         alt="Hands holding blue and white yarn while knitting"
       />
       <img
+        class="tile-b"
         src="https://images.unsplash.com/photo-1475578749612-705fc64d0574?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
         alt="Yarn roll with crochet hooks"
       />

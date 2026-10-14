@@ -13,14 +13,17 @@
       </p>
       <div class="photo-masonry">
         <img
+          class="tile-large"
           src="https://images.unsplash.com/photo-1602706294170-1fed8eecd9f9?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
           alt="Close-up of knit textile fabric"
         />
         <img
+          class="tile-a"
           src="https://images.unsplash.com/photo-1459792323369-14e51bb68de0?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
           alt="Assorted colorful thread spools"
         />
         <img
+          class="tile-b"
           src="https://images.unsplash.com/photo-1670764732222-e787bccd934f?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
           alt="Macro close-up of cream wool yarn"
         />

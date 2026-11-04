@@ -7,8 +7,8 @@
       <div class="eyebrow">Global Clothing Manufacturer &amp; Sourcing Agent</div>
       <h1 class="section-title">Rainbow Doll</h1>
       <p class="section-text">
-        We connect brands with dedicated garment factories across Southern China, specializing in
-        knits, sweaters, and denim — backed by sourcing offices in the US and Asia, and a team with
+        We connect brands with dedicated garment factories across China, specializing in denim,
+        sweaters, and knits — backed by sourcing offices in the US and Asia, and with a team who has
         over 20 years of production experience.
       </p>
       <div class="photo-masonry">
@@ -43,8 +43,8 @@
           <h2 class="section-title">A vertically integrated sourcing partner</h2>
           <p class="section-text">
             Rainbow Doll is a vertical clothing manufacturer with direct factory relationships
-            across Southern China. From first sample to final shipment, our team manages sourcing,
-            production, and quality control end-to-end — so clients get a single point of contact
+            across China. From the first sample to the final shipment, our team manages sourcing,
+            production, and quality control end-to-end, so our clients get a single point of contact
             instead of juggling multiple vendors.
           </p>
         </div>
@@ -59,7 +59,7 @@
         <div class="card">
           <h3 class="card-title">Vertical &amp; Direct Sourcing</h3>
           <p class="section-text">
-            We work directly with factories, cutting out middlemen for better pricing and faster
+            We work directly with factories, cutting out the middlemen for better pricing and faster
             turnaround.
           </p>
         </div>
@@ -85,13 +85,14 @@
         <div class="card">
           <h3 class="card-title">24/7 Production Monitoring</h3>
           <p class="section-text">
-            Our QA and production teams track every order continuously, from cutting to packing.
+            Our production team track every order continuously, from cutting to shipments arrival at
+            our clients' warehouses.
           </p>
         </div>
         <div class="card">
           <h3 class="card-title">Dedicated Factories per Category</h3>
           <p class="section-text">
-            Woven, denim, and sweater production each run through factories specialized in that
+            Denim, sweater, and knit production each run through factories specialized in that
             craft.
           </p>
         </div>
@@ -121,8 +122,8 @@
     <!-- CTA -->
     <section class="section intro-cta">
       <h2 class="section-title">Ready to start production?</h2>
-      <p class="section-text">Tell us what you need and we'll put together a quote.</p>
-      <RouterLink to="/quote" class="submit-btn">Request a Quote</RouterLink>
+      <p class="section-text">Tell us what you need and we'll put together a production.</p>
+      <RouterLink to="/quote" class="submit-btn">Contact</RouterLink>
     </section>
   </main>
 </template>

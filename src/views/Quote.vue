@@ -4,6 +4,7 @@ import { reactive, ref } from 'vue'
 // Get a free access key at https://web3forms.com/ (just sign up with an
 // email, verify it, and copy the key — no credit card, no coding needed)
 // then paste it here in place of the placeholder below.
+// their email is prod@rainbowdollla.com
 const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'
 
 const form = reactive({
@@ -60,8 +61,8 @@ async function handleSubmit() {
 <template>
   <main class="page">
     <section class="section">
-      <div class="eyebrow">Quote</div>
-      <h1 class="section-title">Get a Quote</h1>
+      <div class="eyebrow">Contact</div>
+      <h1 class="section-title">Contact us</h1>
       <p class="section-text">
         Tell us about your project and a member of our team will follow up with next steps.
       </p>

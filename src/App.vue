@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import Navbar from './components/Navbar.vue'
 import MenuOverlay from './components/MenuOverlay.vue'
 import LoadingScreen from './components/LoadingScreen.vue'
+import SideNav from './components/SideNav.vue'
 
 const menuOpen = ref(false)
 const loading = ref(true)
@@ -24,6 +25,7 @@ onMounted(() => {
   </Transition>
 
   <Navbar :menu-open="menuOpen" @toggle-menu="toggleMenu" />
+  <SideNav />
   <MenuOverlay :open="menuOpen" @close="menuOpen = false" />
 
   <RouterView v-slot="{ Component }">

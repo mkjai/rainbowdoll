@@ -739,3 +739,82 @@ body::before {
 .form-status.error {
   color: #8a2f2f;
 }
+
+/* ---------- Desktop: page links live in the logo column instead of the menu ---------- */
+.side-nav {
+  position: fixed;
+  top: calc(1.5rem + var(--logo-size) - var(--gutter) + 2rem);
+  left: var(--gutter);
+  width: calc(var(--logo-size) - var(--gutter));
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.side-link {
+  display: inline-block;
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s var(--ease);
+}
+
+.side-link:hover {
+  opacity: 0.55;
+}
+
+.side-link.router-link-active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.side-item-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.side-caret-btn {
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.25rem 0.9rem;
+}
+
+.side-sub-link {
+  font-size: 1.05rem;
+  color: var(--color-text-soft);
+  transition: opacity 0.2s var(--ease);
+}
+
+.side-sub-link:hover {
+  opacity: 0.6;
+}
+
+.side-sub-link-nested {
+  margin-left: 0.9rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-btn,
+  .menu-overlay {
+    display: none;
+  }
+}

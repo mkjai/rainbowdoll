@@ -5,16 +5,44 @@ import Factory from '../views/Factory.vue'
 import Quote from '../views/Quote.vue'
 
 const routes = [
-  { path: '/', name: 'introduction', component: Introduction, meta: { title: 'Rainbow Doll | Clothing Manufacturer & Sourcing Agent' } },
-  { path: '/specialization', name: 'specialization', component: Specialization, meta: { title: 'Specialization | Rainbow Doll' } },
-  { path: '/factory', name: 'factory', component: Factory, meta: { title: 'Our Factories | Rainbow Doll' } },
-  { path: '/quote', name: 'quote', component: Quote, meta: { title: 'Get a Quote | Rainbow Doll' } },
+  {
+    path: '/',
+    name: 'introduction',
+    component: Introduction,
+    meta: { title: 'Rainbow Doll | Clothing Manufacturer & Sourcing Agent' },
+  },
+  {
+    path: '/specialization',
+    name: 'specialization',
+    component: Specialization,
+    meta: { title: 'Specialization | Rainbow Doll' },
+  },
+  {
+    path: '/factory',
+    name: 'factory',
+    component: Factory,
+    meta: { title: 'Our Factories | Rainbow Doll' },
+  },
+  {
+    path: '/quote',
+    name: 'quote',
+    component: Quote,
+    meta: { title: 'Get a Quote | Rainbow Doll' },
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  scrollBehavior() {
+  scrollBehavior(to, from) {
+    // Jump links (e.g. /specialization#denim): scroll to the section. When arriving from another
+    // page, wait for the page transition to finish so the section exists.
+    if (to.hash) {
+      const delay = to.path === from.path ? 0 : 450
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ el: to.hash, behavior: 'smooth' }), delay)
+      })
+    }
     return { top: 0, behavior: 'smooth' }
   },
 })

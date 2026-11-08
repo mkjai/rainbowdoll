@@ -27,7 +27,7 @@ html {
   --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --nav-height: 84px;
-  --logo-size: clamp(150px, 16vw, 240px);
+  --logo-size: clamp(160px, 16vw, 240px);
   --logo-size-mobile-big: 200px;
   --logo-size-mobile-small: 44px;
   --gutter: 3rem;
@@ -85,6 +85,26 @@ h4 {
   .page {
     padding-left: 0;
     padding-top: calc(var(--logo-size-mobile-big) + 0.75rem);
+  }
+}
+
+/* Vertical divider between the logo column and the rest of the page (desktop only).
+   It sits flush against the left end of the horizontal section lines. */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--gutter) + var(--logo-size) - 1px);
+  width: 1px;
+  background-color: var(--color-line);
+  z-index: 250;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body::before {
+    display: none;
   }
 }
 
@@ -146,8 +166,9 @@ h4 {
 }
 
 .navbar-logo {
-  width: var(--logo-size);
-  height: var(--logo-size);
+  /* The logo column is --logo-size wide; the logo leaves the same gap on its right as on its left. */
+  width: calc(var(--logo-size) - var(--gutter));
+  height: calc(var(--logo-size) - var(--gutter));
   display: flex;
   align-items: center;
   justify-content: center;

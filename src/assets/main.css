@@ -27,6 +27,9 @@ html {
   --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --nav-height: 84px;
+  --logo-size: clamp(150px, 16vw, 240px);
+  --logo-size-mobile-big: 200px;
+  --logo-size-mobile-small: 44px;
   --gutter: 3rem;
   --gutter-mobile: 1.5rem;
 
@@ -74,7 +77,15 @@ h4 {
 /* ---------- Layout helpers ---------- */
 .page {
   padding-top: var(--nav-height);
+  padding-left: calc(var(--gutter) + var(--logo-size));
   min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-left: 0;
+    padding-top: calc(var(--logo-size-mobile-big) + 0.75rem);
+  }
 }
 
 .section {
@@ -122,9 +133,9 @@ h4 {
   right: 0;
   height: var(--nav-height);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 var(--gutter);
+  padding: 1.5rem var(--gutter) 0;
   z-index: 300;
   background-color: transparent;
   pointer-events: none;
@@ -134,20 +145,34 @@ h4 {
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0 var(--gutter-mobile);
-  }
-}
-
 .navbar-logo {
-  width: 128px;
-  height: 128px;
+  width: var(--logo-size);
+  height: var(--logo-size);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2rem;
+  transition:
+    width 0.4s var(--ease),
+    height 0.4s var(--ease);
+}
+
+/* Mobile: big logo at the top of the page, shrinks once scrolled (or when the menu is open). */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem var(--gutter-mobile) 0;
+  }
+
+  .navbar-logo {
+    width: var(--logo-size-mobile-big);
+    height: var(--logo-size-mobile-big);
+  }
+
+  .navbar.scrolled .navbar-logo,
+  .navbar.menu-open .navbar-logo {
+    width: var(--logo-size-mobile-small);
+    height: var(--logo-size-mobile-small);
+  }
 }
 
 .navbar-logo-img {
@@ -218,7 +243,15 @@ h4 {
   display: flex;
   flex-direction: column;
   padding: 0 var(--gutter);
+  padding-left: calc(var(--gutter) * 2 + var(--logo-size));
   padding-top: var(--nav-height);
+}
+
+@media (max-width: 768px) {
+  .menu-overlay {
+    padding-left: var(--gutter-mobile);
+    padding-right: var(--gutter-mobile);
+  }
 }
 
 .menu-overlay-body {
@@ -264,6 +297,11 @@ h4 {
 .menu-sub-link:hover {
   opacity: 0.6;
   padding-left: 0.4rem;
+}
+
+.menu-sub-link-nested {
+  margin-left: 1.25rem;
+  font-size: 1rem;
 }
 
 .menu-item-row {
@@ -424,7 +462,7 @@ h4 {
   gap: 2rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
@@ -571,6 +609,22 @@ h4 {
 .spec-section {
   scroll-margin-top: var(--nav-height);
   border-top: 1px solid var(--color-line);
+}
+
+.spec-subsection {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-line);
+  scroll-margin-top: var(--nav-height);
+}
+
+.sub-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 1.25rem;
+}
+
+.spec-subsection-photo {
+  margin-top: 2.5rem;
 }
 
 .spec-list {

@@ -17,6 +17,7 @@ import Denim from '../components/specialization/Denim.vue'
         <a href="#knits" class="spec-jump-btn">Knits</a>
         <a href="#sweater" class="spec-jump-btn">Sweater</a>
         <a href="#denim" class="spec-jump-btn">Denim</a>
+        <a href="#garment-dye" class="spec-jump-btn">Garment Dye</a>
       </nav>
     </section>
 

@@ -37,6 +37,12 @@ function closeAll() {
             <a href="/specialization#knits" class="menu-sub-link" @click="closeAll">Knits</a>
             <a href="/specialization#sweater" class="menu-sub-link" @click="closeAll">Sweater</a>
             <a href="/specialization#denim" class="menu-sub-link" @click="closeAll">Denim</a>
+            <a
+              href="/specialization#garment-dye"
+              class="menu-sub-link menu-sub-link-nested"
+              @click="closeAll"
+              >Garment Dye</a
+            >
           </div>
         </div>
 

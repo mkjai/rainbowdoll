@@ -46,7 +46,7 @@ watch(
       </div>
     </div>
 
-    <RouterLink to="/factory" class="side-link">Factory</RouterLink>
-    <RouterLink to="/quote" class="side-link">Quote</RouterLink>
+    <RouterLink to="/factory" class="side-link">Process</RouterLink>
+    <RouterLink to="/quote" class="side-link">Contact</RouterLink>
   </nav>
 </template>

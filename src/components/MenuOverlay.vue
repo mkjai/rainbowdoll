@@ -47,7 +47,7 @@ function closeAll() {
         </div>
 
         <RouterLink to="/factory" class="menu-link" @click="closeAll">Factory</RouterLink>
-        <RouterLink to="/quote" class="menu-link" @click="closeAll">Quote</RouterLink>
+        <RouterLink to="/quote" class="menu-link" @click="closeAll">Contact</RouterLink>
       </nav>
     </div>
   </Transition>

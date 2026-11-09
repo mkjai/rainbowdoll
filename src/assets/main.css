@@ -29,7 +29,7 @@ html {
   --nav-height: 84px;
   --logo-size: clamp(160px, 16vw, 240px);
   --logo-size-mobile-big: 200px;
-  --logo-size-mobile-small: 44px;
+  --logo-size-mobile-small: 48px;
   --gutter: 3rem;
   --gutter-mobile: 1.5rem;
 

@@ -14,6 +14,35 @@ const form = reactive({
   message: '',
 })
 
+const offices = [
+  {
+    region: 'United States',
+    addresses: [
+      { label: 'Headquarters', lines: ['724 E 1st Street, Suite 200', 'Los Angeles, CA 90012'] },
+    ],
+    people: [
+      { name: 'Joanne Fan', email: 'joanne@rainbowdollla.com' },
+      { name: 'Pauline Chow', email: 'pauline@rainbowdollla.com' },
+    ],
+  },
+  {
+    region: 'Hong Kong & China',
+    addresses: [
+      {
+        label: 'Hong Kong Office',
+        lines: [
+          'Room 06, 2/F, Cheung Hing Industrial Building',
+          '23 Tai Yip Street, Ngau Tau Kok, Kowloon',
+        ],
+      },
+    ],
+    people: [
+      { name: 'Marvin Kwok', email: 'marvin@rainbowdollla.com' },
+      { name: 'Ivy Chiu', email: 'ivy@rainbowdollla.com' },
+    ],
+  },
+]
+
 const status = ref('idle') // idle | sending | success | error
 const statusMessage = ref('')
 
@@ -123,6 +152,32 @@ async function handleSubmit() {
         <p v-if="status === 'success'" class="form-status success">{{ statusMessage }}</p>
         <p v-if="status === 'error'" class="form-status error">{{ statusMessage }}</p>
       </form>
+    </section>
+
+    <section class="section contact-offices-section">
+      <div class="eyebrow">Our Team</div>
+      <h2 class="section-title">Get in touch directly</h2>
+      <div class="contact-offices">
+        <div v-for="office in offices" :key="office.region" class="contact-office">
+          <h3 class="contact-region">{{ office.region }}</h3>
+
+          <div v-for="addr in office.addresses" :key="addr.label" class="contact-block">
+            <div class="contact-label">{{ addr.label }}</div>
+            <address class="contact-address">
+              <template v-for="(line, i) in addr.lines" :key="i">
+                {{ line }}<br v-if="i < addr.lines.length - 1" />
+              </template>
+            </address>
+          </div>
+
+          <div class="contact-people">
+            <div v-for="person in office.people" :key="person.email" class="contact-person">
+              <div class="contact-name">{{ person.name }}</div>
+              <a :href="`mailto:${person.email}`" class="contact-email">{{ person.email }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>

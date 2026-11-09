@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Introduction from '../views/Introduction.vue'
 import Specialization from '../views/Specialization.vue'
-import Factory from '../views/Factory.vue'
+import Process from '../views/Process.vue'
 import Quote from '../views/Quote.vue'
 
 const routes = [
@@ -18,11 +18,13 @@ const routes = [
     meta: { title: 'Specialization | Rainbow Doll' },
   },
   {
-    path: '/factory',
-    name: 'factory',
-    component: Factory,
-    meta: { title: 'Our Factories | Rainbow Doll' },
+    path: '/process',
+    name: 'process',
+    component: Process,
+    meta: { title: 'Production Process | Rainbow Doll' },
   },
+  // Old URL, kept so existing links still work.
+  { path: '/factory', redirect: '/process' },
   {
     path: '/quote',
     name: 'quote',

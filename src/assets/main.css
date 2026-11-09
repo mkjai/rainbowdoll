@@ -507,6 +507,183 @@ body::before {
   margin-bottom: 0.75rem;
 }
 
+/* ---------- Process page ---------- */
+/* Boxes keep a fixed size at every screen width. */
+.process-steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid var(--color-text);
+  padding: 1.25rem 1rem;
+}
+
+/* Line connecting each box to the next (vertical layout) */
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--color-text);
+}
+
+.process-step-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.process-step-text {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  line-height: 1.5;
+}
+
+/* Wide screens: all seven boxes in one row, joined by horizontal lines. */
+@media (min-width: 1600px) {
+  .process-steps {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .process-step {
+    width: 160px;
+  }
+
+  .process-step:not(:last-child)::after {
+    top: 50%;
+    left: 100%;
+    width: 1.5rem;
+    height: 1px;
+  }
+}
+
+.process-section-line {
+  border-top: 1px solid var(--color-line);
+}
+
+.stat-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.stat-value {
+  font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+}
+
+.stat-unit {
+  margin-left: 0.25em;
+}
+
+/* Optical alignment: digits have a little side bearing, and "1" has the most. */
+.stat-value {
+  margin-left: -0.02em;
+}
+
+.stat-value-one {
+  margin-left: -0.055em;
+}
+
+.stat-label {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Contact page: offices ---------- */
+.contact-offices-section {
+  border-top: 1px solid var(--color-line);
+}
+
+.contact-offices {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-region {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.contact-block {
+  margin-bottom: 1.5rem;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin-bottom: 0.35rem;
+}
+
+.contact-address {
+  font-style: normal;
+  color: var(--color-text);
+}
+
+.contact-people {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-name {
+  font-size: 1.1rem;
+}
+
+.contact-email {
+  color: var(--color-text-soft);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.contact-email:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .contact-offices {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Introduction page ---------- */
 .intro-hero {
   padding-top: 4rem;
@@ -772,7 +949,7 @@ body::before {
 
 .side-item-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.25rem;
 }

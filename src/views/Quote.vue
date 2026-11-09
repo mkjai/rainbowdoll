@@ -5,7 +5,7 @@ import { reactive, ref } from 'vue'
 // email, verify it, and copy the key — no credit card, no coding needed)
 // then paste it here in place of the placeholder below.
 // their email is prod@rainbowdollla.com
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'
+const WEB3FORMS_ACCESS_KEY = '15bd6f75-9aba-4144-a226-255aedc95264'
 
 const form = reactive({
   name: '',
